@@ -7,3 +7,5 @@
 *.iml
 out
 gen
+Array/test.js
+List/
