@@ -13,7 +13,10 @@ function MyList() {
     this.length = ()=>this.listSize;
     // this.length =length;
     // //清空列表中所有元素
-    // this.clear=
+    this.clear=()=>{
+        this.dataStroe = [];
+        this.listSize = 0;
+    };
     //返回集合（实际为数组）;
     this.toString=()=>this.dataStroe;
     //返回第一个符合要求的元素所在位置，若无则-1 ES6中数组新增includes方法
