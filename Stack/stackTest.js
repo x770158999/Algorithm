@@ -50,4 +50,36 @@ while(stack1.length()){
 }
 console.log('reverse',tmp);
 //////////////////////////////////////
+//通过栈模拟递归
+//Fibonacci sequence
+let time = new Date();
+function fibo(n) {
+    return n>2 ? fibo(n -1)+fibo(n - 2):1;
+}
+console.log(fibo(45));
+console.log('递归',new Date()-time,'ms');//10138 ms
+let time1 = new Date();
+console.log(fb(9999));
+console.log('栈',new Date()-time1,'ms');//3ms 差距太大
+
+
+function fb(n) {
+    let stack3 = new Stack();
+    if(n<3){
+        return 1;
+    }
+    stack3.push(1);
+    stack3.push(1);
+    let i=3;
+    while (i<n){
+        let tmp1= stack3.pop();
+        let tmp2= stack3.pop();
+        stack3.push(tmp2);
+        stack3.push(tmp1);
+        stack3.push(tmp1+tmp2);
+        i++;
+    }
+    return stack3.pop()+stack3.pop();
+}
+
 
