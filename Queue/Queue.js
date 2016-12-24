@@ -8,10 +8,13 @@ function Queue() {
     Stack.call(this);
     //删除无用继承
     delete this.pop;
-    this.take =()=>this.dataStroe.shift();
+    this.take =()=>{
+        if(this.top){this.top--}
+        return this.dataStroe.shift()};
     this.end=this.peek;
     //重载
     this.peek =()=>this.dataStroe[0];
+    this.length =this.dataStroe.length;
     this.front=this.peek;
 }
 Util.inherits(Queue,Stack);
