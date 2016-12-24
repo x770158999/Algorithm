@@ -30,14 +30,17 @@ function convert(int,base) {
 }
 const res=convert(999,7);
 console.log('res',res);//>>>2625
+const res1=convert(999,2);
+console.log('res1',res1);//>>>1111100111
 //////////////////////////////////////////////////
 //通过栈实现 reverse
 let arr = [1,2,3,4,5,6,7];
+//for in循环干扰项
 Array.prototype.ccc=function () {
   console.log('ccccc');
 };
 let stack1 = new Stack();
-console.log(arr.length);
+console.log('length',arr.length);
 for(let index in arr){
         console.log(index);
         if(arr.hasOwnProperty(index)){
@@ -56,11 +59,11 @@ let time = new Date();
 function fibo(n) {
     return n>2 ? fibo(n -1)+fibo(n - 2):1;
 }
-console.log(fibo(45));
-console.log('递归',new Date()-time,'ms');//10138 ms
+console.log(fibo(45));//1134903170
+console.log('递归计算',new Date()-time,'ms');//10138 ms
 let time1 = new Date();
-console.log(fb(9999));
-console.log('栈',new Date()-time1,'ms');//3ms 差距太大
+console.log(fb(999));//2.686381002448534e+208
+console.log('栈计算',new Date()-time1,'ms');//3ms 差距太大
 
 
 function fb(n) {
