@@ -7,7 +7,9 @@ Promise = function() {
     this.status = 'pending';// 初始状态pending 完成状态fulfilled 拒绝状态rejected
 };
 
-Promise.prototype.getQueue = ()=>this.queue;
+Promise.prototype.getQueue = function(){
+    return this.queue;
+};
 Promise.prototype.getStatus = function() {
     return this.status;
 };
@@ -109,7 +111,7 @@ let utils = (function(){
     }
 })();
 
-//延时处理 新建里一个promise
+// 通过Deferred来操作Promise
 Deferred = function() {
     this.promise = new Promise();
 };
@@ -137,3 +139,4 @@ Deferred.prototype.reject = function(err) {
     }
     this.promise.setStatus('rejected', err);
 };
+module.exports = Deferred;
