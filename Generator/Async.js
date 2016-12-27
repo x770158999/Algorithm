@@ -27,6 +27,11 @@ asyncFake('45', function(result) {
     let a=wait(result);
     console.log('异步part2',a);
 });
+//add event loop part1,part1-->part2-->part3
+asyncFake('45', function(result) {
+    let a=wait(result);
+    console.log('异步part3',a);
+});
 //同步执行
 console.log('11111111');
 console.log('22222222');
