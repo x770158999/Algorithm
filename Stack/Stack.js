@@ -11,7 +11,7 @@ function Stack() {
             return this.dataStroe[--this.top];
         }else if(this.top===0){
             return this.dataStroe[this.top]
-        };
+        }
     };
     this.peek=()=>this.dataStroe[this.top-1];
     this.push=(element)=>{this.dataStroe[this.top++]=element};
